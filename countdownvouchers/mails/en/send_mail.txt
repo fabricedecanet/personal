@@ -1,0 +1,10 @@
+
+[{shop_url}] 
+
+Goodmornig {firstname} {lastname}, 
+
+Here is the product list promotion in our shop {shop_name} :
+{product_link}		 
+
+{shop_name} [{shop_url}]
+

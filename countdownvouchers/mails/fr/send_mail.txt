@@ -1,0 +1,10 @@
+
+[{shop_url}] 
+
+Bonjour {firstname} {lastname}, 
+
+Voici la liste de(s) produit(s) en promotion dans notre boutique {shop_name} :
+{product_link}		 
+
+{shop_name} [{shop_url}]
+
