@@ -256,13 +256,13 @@ class CountdownVouchers extends Module
                 'verif_alert' => $verif_alert ? (int)$mail_check : '',
             ));
         }
-        if(_PS_VERSION_ < '1.7') {
+        if (_PS_VERSION_ < '1.7') {
             return $this->display(__FILE__, 'views/templates/hook/select_promotion.tpl');
         }
     }
     public function hookDisplayFooterProduct($params)
     {
-        if(_PS_VERSION_ >= '1.7') {
+        if (_PS_VERSION_ >= '1.7') {
             $date = date("Y-m-d H:i:s");
             $dates = strtotime($date);
             $alert_params = Configuration::get('GDT_ALERT_PROMOTION');
@@ -330,7 +330,7 @@ class CountdownVouchers extends Module
             'id_customer' => $params['cart']->id_customer,
             'alert_params' => $alert_params,
         ));
-        if(_PS_VERSION_ < '1.7') {
+        if (_PS_VERSION_ < '1.7') {
             return $this->display(__FILE__, 'views/templates/hook/alert_product_list.tpl');
         } else {
             return $this->display(__FILE__, 'views/templates/hook/version17/alert_product_list.tpl');
@@ -382,9 +382,9 @@ class CountdownVouchers extends Module
                 }
             }
         }
-        if ($mail){
+        if ($mail) {
             echo 'mails send';
-        } elseif(!$product) {
+        } elseif (!$product) {
             echo 'no products to send for promtion';
         }
         die;

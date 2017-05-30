@@ -43,12 +43,13 @@ class CountdownvouchersCounterdownModuleFrontController extends ModuleFrontContr
                     $pdt = new ProductCore((int)$value['id_product']) ;
                     $cat = new CategoryCore((int)$pdt->id_category_default);
                     $tab_ipa = $pdt->getProductAttributesIds((int)$value['id_product']);
-                    $product_link[$value['id_product']] = $link->getProductLink((int)$value['id_product'], 
-                        $pdt->link_rewrite[$this->context->language->id], 
-                        $cat->link_rewrite[$this->context->language->id], 
-                        $pdt->ean13, 
-                        null, 
-                        null, 
+                    $product_link[$value['id_product']] = $link->getProductLink(
+                        (int)$value['id_product'],
+                        $pdt->link_rewrite[$this->context->language->id],
+                        $cat->link_rewrite[$this->context->language->id],
+                        $pdt->ean13,
+                        null,
+                        null,
                         (int)$tab_ipa[0]['id_product_attribute']
                     );
                 }
