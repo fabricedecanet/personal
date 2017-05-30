@@ -24,7 +24,7 @@
 *}
 
 {if $alert_params AND $alert_params eq 1}
-    <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" title="{l s='alert list' mod='countdownvouchers'}" href="{$link->getModuleLink('countdownvouchers', 'counterdown', ['customer_id'=>{$id_customer}], true)}">
+    <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" title="{l s='alert list' mod='countdownvouchers'}" href="{$link->getModuleLink('countdownvouchers', 'counterdown', ['customer_id'=>{$id_customer|escape:'htmlall':'UTF-8'}], true)}">
         <span class="link-item">
             <i class="material-icons"></i>
             {l s='My promotions alerts' mod='countdownvouchers'}

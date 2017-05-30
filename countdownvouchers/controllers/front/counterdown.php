@@ -37,13 +37,20 @@ class CountdownvouchersCounterdownModuleFrontController extends ModuleFrontContr
             $link = new LinkCore();
             $product_link = array();
             foreach ($product as $value) {
-                if(_PS_VERSION_ < '1.7'){
+                if (_PS_VERSION_ < '1.7') {
                     $product_link[$value['id_product']] = $link->getProductLink($value['id_product']);
-                }else{
+                } else {
                     $pdt = new ProductCore((int)$value['id_product']) ;
                     $cat = new CategoryCore((int)$pdt->id_category_default);
                     $tab_ipa = $pdt->getProductAttributesIds((int)$value['id_product']);
-                    $product_link[$value['id_product']] = $link->getProductLink((int)$value['id_product'], $pdt->link_rewrite[$this->context->language->id], $cat->link_rewrite[$this->context->language->id], $pdt->ean13, null, null, (int)$tab_ipa[0]['id_product_attribute']);
+                    $product_link[$value['id_product']] = $link->getProductLink((int)$value['id_product'], 
+                        $pdt->link_rewrite[$this->context->language->id], 
+                        $cat->link_rewrite[$this->context->language->id], 
+                        $pdt->ean13, 
+                        null, 
+                        null, 
+                        (int)$tab_ipa[0]['id_product_attribute']
+                    );
                 }
             }
             $this->context->smarty->assign(array(
@@ -51,9 +58,9 @@ class CountdownvouchersCounterdownModuleFrontController extends ModuleFrontContr
                 'pdtlink' => $product_link,
             ));
         }
-        if(_PS_VERSION_ < '1.7'){
+        if (_PS_VERSION_ < '1.7') {
             return $this->setTemplate('alert_product.tpl');
-        }else{
+        } else {
             $this->setTemplate('module:countdownvouchers/views/templates/front/version17/alert_product.tpl');
         }
     }
@@ -71,7 +78,6 @@ class CountdownvouchersCounterdownModuleFrontController extends ModuleFrontContr
         if (!$verif_alert) {
             $mail_check = ($select_val === 'false') ? 0 : 1;
             $rep = countDownVouchersClass::insertProductAlert($id_product, $name, $customer_id, $shop_id, $mail_check);
-
         } else {
             $rep = countDownVouchersClass::deleteProductAlert($id_product, $shop_id, $customer_id);
         }

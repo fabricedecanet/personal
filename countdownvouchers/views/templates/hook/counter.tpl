@@ -29,7 +29,7 @@
     <p id="counter" style="margin-left: 0%;width: auto;text-align: center;">&nbsp;{l s='unlimited vouchers' mod='countdownvouchers'}</p>
 </div>
 {else}
-    <div class="action-buttons countdown{$pid}" data-countdown="{$time|escape:'htmlall':'UTF-8'}">
+    <div class="action-buttons countdown{$pid|escape:'htmlall':'UTF-8'}" data-countdown="{$time|escape:'htmlall':'UTF-8'}">
         
     </div>
     <script type="text/javascript">

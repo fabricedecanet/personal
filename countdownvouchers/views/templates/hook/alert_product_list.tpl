@@ -24,7 +24,7 @@
 *}
 
 <li class="lnk_wishlist">
-    <a title="{l s='alert list' mod='countdownvouchers'}" href="{$link->getModuleLink('countdownvouchers', 'counterdown', ['customer_id'=>{$id_customer}], true)}">
+    <a title="{l s='alert list' mod='countdownvouchers'}" href="{$link->getModuleLink('countdownvouchers', 'counterdown', ['customer_id'=>{$id_customer|escape:'htmlall':'UTF-8'}], true)}">
         <i class="icon-list-alt"></i><span>{l s='My promotions alerts' mod='countdownvouchers'}</span>
     </a>
 </li>

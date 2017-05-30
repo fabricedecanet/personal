@@ -61,8 +61,7 @@ class CountdownVouchers extends Module
     public function install()
     {
         include(dirname(__FILE__).'/sql/install.php');
-        if (
-            !parent::install() ||
+        if (!parent::install() ||
             !$this->registerHook('header') ||
             !$this->registerHook('displayProductPriceBlock') ||
             !$this->registerHook('displayCustomerAccount') ||
@@ -80,11 +79,10 @@ class CountdownVouchers extends Module
     public function uninstall()
     {
         include(dirname(__FILE__).'/sql/uninstall.php');
-        if (
-                 !parent::uninstall() ||
-                 !Configuration::deleteByName('GDT_ALERT_PROMOTION') ||
-                 !Configuration::deleteByName('GDT_COUNTDOWNS') ||
-                 !Configuration::deleteByName('GDT_PROMOTIONS')) {
+        if (!parent::uninstall() ||
+            !Configuration::deleteByName('GDT_ALERT_PROMOTION') ||
+            !Configuration::deleteByName('GDT_COUNTDOWNS') ||
+            !Configuration::deleteByName('GDT_PROMOTIONS')) {
             return false;
         }
         return true;
@@ -165,7 +163,6 @@ class CountdownVouchers extends Module
 
             foreach ($product as $key => $value) {
                 if ($key == 'specificPrice' || $key == 'specific_prices') {
-                    
                     $specificprice[] = $value;
                 }
             }
@@ -175,11 +172,10 @@ class CountdownVouchers extends Module
                 if ($specificprice[0]['to'] == null) {
                     $countdown = false;
                 }
-                if (
-                        $params['type'] == 'price' &&
-                        $countdown &&
-                        $view_countdown == '1' &&
-                        $price_to != '0000-00-00 00:00:00'
+                if ($params['type'] == 'price' &&
+                    $countdown &&
+                    $view_countdown == '1' &&
+                    $price_to != '0000-00-00 00:00:00'
                     ) {
                     $this->context->smarty->assign(array(
                         'pid' => is_array($product) ? $product["id_product"] : $product->id,
@@ -187,11 +183,10 @@ class CountdownVouchers extends Module
                         'unlimited' => false,
                     ));
                     return $this->display(__FILE__, 'views/templates/hook/counter.tpl');
-                } elseif (
-                        $params['type'] == 'price' &&
-                        $countdown &&
-                        $view_countdown == '1' &&
-                        $price_to == '0000-00-00 00:00:00'
+                } elseif ($params['type'] == 'price' &&
+                    $countdown &&
+                    $view_countdown == '1' &&
+                    $price_to == '0000-00-00 00:00:00'
                 ) {
                     $this->context->smarty->assign(array(
                         'pid' => is_array($product) ? $product["id_product"] : $product->id,
@@ -261,13 +256,13 @@ class CountdownVouchers extends Module
                 'verif_alert' => $verif_alert ? (int)$mail_check : '',
             ));
         }
-        if(_PS_VERSION_ < '1.7'){
+        if(_PS_VERSION_ < '1.7') {
             return $this->display(__FILE__, 'views/templates/hook/select_promotion.tpl');
         }
     }
     public function hookDisplayFooterProduct($params)
     {
-        if(_PS_VERSION_ >= '1.7'){
+        if(_PS_VERSION_ >= '1.7') {
             $date = date("Y-m-d H:i:s");
             $dates = strtotime($date);
             $alert_params = Configuration::get('GDT_ALERT_PROMOTION');
@@ -295,7 +290,7 @@ class CountdownVouchers extends Module
                             'date_from'=>$promotionlist[$key]['from'],
                             'date_to'=>$promotionlist[$key]['to'],
                             'reduction_type'=>$promotionlist[$key]['reduction_type'],
-                            'reduction'=>round($reduction,2));
+                            'reduction'=>round($reduction, 2));
                     }
                 }
 
@@ -335,9 +330,9 @@ class CountdownVouchers extends Module
             'id_customer' => $params['cart']->id_customer,
             'alert_params' => $alert_params,
         ));
-        if(_PS_VERSION_ < '1.7'){
+        if(_PS_VERSION_ < '1.7') {
             return $this->display(__FILE__, 'views/templates/hook/alert_product_list.tpl');
-        }else{
+        } else {
             return $this->display(__FILE__, 'views/templates/hook/version17/alert_product_list.tpl');
         }
     }
@@ -387,7 +382,7 @@ class CountdownVouchers extends Module
                 }
             }
         }
-        if($mail){
+        if ($mail){
             echo 'mails send';
         } elseif(!$product) {
             echo 'no products to send for promtion';

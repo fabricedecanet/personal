@@ -30,7 +30,7 @@
             <ul>
                 {if products}
                     {foreach from=$products item=product}
-                         <ol style="color:blue; font-size: 15px;"><a href="{$pdtlink[$product.id_product]}" target="_blank"> {$product.name|escape:'htmlall':'UTF-8'}</a></ol>
+                         <ol style="color:blue; font-size: 15px;"><a href="{$pdtlink[$product.id_product]|escape:'htmlall':'UTF-8'}" target="_blank"> {$product.name|escape:'htmlall':'UTF-8'}</a></ol>
                     {/foreach}
                 {else}
                     {l s='You have not selected any products for your promotions alerts' mod='countdownvouchers'}
