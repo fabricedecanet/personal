@@ -43,7 +43,7 @@ class CountdownVouchers extends Module
             $this->need_instance = 0;
 
             /**
-             * Set $this->bootstrap to true if your module is compliant with bootstrap (Global Dynamics Technologies 1.6)
+             * Set $this->bootstrap to true if your module
              */
             $this->bootstrap = true;
 
