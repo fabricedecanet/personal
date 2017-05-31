@@ -29,12 +29,16 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <ul>
-                    {if $products}
-                        {foreach from=$products item=product}
-                             <ol style="color:blue; font-size: 15px;"><a href="{$pdtlink[$product.id_product]|escape:'htmlall':'UTF-8'}" target="_blank"> {$product.name|escape:'htmlall':'UTF-8'}</a></ol>
-                        {/foreach}
+                    {if $show_alert_list eq 1}
+                        {if $products}
+                            {foreach from=$products item=product}
+                                 <ol style="color:blue; font-size: 15px;"><a href="{$pdtlink[$product.id_product]|escape:'htmlall':'UTF-8'}" target="_blank"> {$product.name|escape:'htmlall':'UTF-8'}</a></ol>
+                            {/foreach}
+                        {else}
+                            {l s='You have not selected any products for your promotions alerts' mod='countdownvouchers'}
+                        {/if}
                     {else}
-                        {l s='You have not selected any products for your promotions alerts' mod='countdownvouchers'}
+                        {l s='Please contact the administrator for the configuration of the list of alerts promotions' mod='countdownvouchers'}
                     {/if}
                 </ul>
             </li>
