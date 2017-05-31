@@ -48,7 +48,8 @@
 {/if}
 {if isset($alert) AND ($alert eq 1)}
     <p class="checkbox addressesAreEquals">
-        <label for="contact_promotion">
+        <br>
+        <label for="contact_promotion" {if $promotionlist}style="float: left;"{else}style="float: right;"{/if}>
             <input type="checkbox" name="contact_promotion" id="contact_promo" {if isset($verif_alert) AND ($verif_alert eq 1)}checked='checked'{/if}value="" data-id_product="{$id_product|intval}" data-id_customer="{$id_customer|intval}" data-id_shop="{$id_shop|intval}">
             {l s='Contact me for promotion' mod='countdownvouchers'}
         </label>
