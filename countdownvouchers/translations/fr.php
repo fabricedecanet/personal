@@ -25,7 +25,7 @@ $_MODULE['<{countdownvouchers}prestashop>alert_product_list_616634768937f0b8a842
 $_MODULE['<{countdownvouchers}prestashop>alert_product_list_5ce997e5d9a85459982f7052c2647f5a'] = 'Mes alertes promotions';
 $_MODULE['<{countdownvouchers}prestashop>counter_2ef7850f4ee4b239919167ed848ca31a'] = 'Promtion ilimitée';
 $_MODULE['<{countdownvouchers}prestashop>counter_92f8fe04038096396691f169df8514f0'] = 'Il vous reste :';
-$_MODULE['<{countdownvouchers}prestashop>counter_e807d3ccf8d24c8c1a3d86db5da78da8'] = 'Jours';
+$_MODULE['<{countdownvouchers}prestashop>counter_c76660d589be9a49e8846e51b71744ae'] = 'Jour(s)';
 $_MODULE['<{countdownvouchers}prestashop>select_promotion_add7a79f32af6fa6f5961f6ec9b96b2c'] = 'FUTURES PROMOTONS DU PRODUIT';
 $_MODULE['<{countdownvouchers}prestashop>select_promotion_9e834f13e35e4edf64863ab414a6217a'] = 'Réduction';
 $_MODULE['<{countdownvouchers}prestashop>select_promotion_a3b5ce10a6ec3a16f8c712b69d0e7f3a'] = 'Date début';

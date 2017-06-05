@@ -36,7 +36,7 @@
         $('.countdown{$pid}').each(function(){
             var meobj = $(this);
             meobj.countdown(meobj.data('countdown'), function(event) {
-                meobj.html(event.strftime('<p id="counter">{l s='You still have:' mod='countdownvouchers'}  <br /> %D {l s='Days' mod='countdownvouchers'} %HH:%MM:%SS</p>'));
+                meobj.html(event.strftime('<p id="counter">{l s='You still have:' mod='countdownvouchers'}  <br /> %D {l s='Day(s)' mod='countdownvouchers'} %HH:%MM:%SS</p>'));
             })
         });
         

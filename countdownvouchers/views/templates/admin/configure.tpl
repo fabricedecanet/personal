@@ -45,7 +45,7 @@
                            {l s='Show the Countdown' mod='countdownvouchers'}
                        </label>
                        <div class="col-lg-9">
-                               <span class="switch Global Dynamics Technologies-switch fixed-width-lg">
+                               <span class="switch prestashop-switch fixed-width-lg">
                                    <input type="radio" name="showcountdown" {if isset($countdowns_params) AND $countdowns_params == '1'}checked{elseif !isset($countdowns_params)}checked{/if} id="showcountdown_on" value="1">
                                    <label for="showcountdown_on">{l s='Yes' mod='countdownvouchers'}</label>
                                    <input type="radio" name="showcountdown" {if isset($countdowns_params) AND $countdowns_params == '0'}checked{/if} id="showcountdown_off" value="0">
@@ -59,7 +59,7 @@
                            {l s='Show next product promotion ' mod='countdownvouchers'}
                        </label>
                        <div class="col-lg-9">
-                           <span class="switch Global Dynamics Technologies-switch fixed-width-lg">
+                           <span class="switch prestashop-switch fixed-width-lg">
                                <input type="radio" name="promotion" {if isset($promotions_params) AND $promotions_params == '1'}checked{elseif !isset($promotions_params)}checked{/if} id="promotion_on" value="1">
                                <label for="promotion_on">{l s='Yes' mod='countdownvouchers'}</label>
                                <input type="radio" name="promotion" {if isset($promotions_params) AND $promotions_params == '0'}checked{/if} id="promotion_off" value="0">
@@ -73,7 +73,7 @@
                            {l s='Show customer alert list product promotions' mod='countdownvouchers'}
                        </label>
                        <div class="col-lg-9">
-                           <span class="switch Global Dynamics Technologies-switch fixed-width-lg">
+                           <span class="switch prestashop-switch fixed-width-lg">
                                <input type="radio" name="alert_promotion" {if isset($alert_params) AND $alert_params == '1'}checked{elseif !isset($alert_params)}checked{/if} id="alert_promotion_on" value="1">
                                <label for="alert_promotion_on">{l s='Yes' mod='countdownvouchers'}</label>
                                <input type="radio" name="alert_promotion" {if isset($alert_params) AND $alert_params == '0'}checked{/if} id="alert_promotion_off" value="0">

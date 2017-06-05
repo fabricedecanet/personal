@@ -235,12 +235,16 @@ class CountdownVouchers extends Module
                         'reduction'=>$reduction);
                 }
             }
-
-            if ($promotionlist != null) {
+            if (!empty($promotionlist)) {
                 $this->context->smarty->assign(array(
-                        'promotionlist' => $date_promo,
-                        'list_promo' => 1,
-                    ));
+                    'promotionlist' => $date_promo,
+                    'list_promo' => 1,
+                ));
+            }else{
+                $this->context->smarty->assign(array(
+                    'promotionlist' => array(),
+                    'list_promo' => 1,
+                ));
             }
         }
         if ($this->context->customer->isLogged() && $alert_params == 1) {
@@ -293,10 +297,14 @@ class CountdownVouchers extends Module
                             'reduction'=>round($reduction, 2));
                     }
                 }
-
-                if ($promotionlist != null) {
+                if (!empty($promotionlist)) {
                     $this->context->smarty->assign(array(
                         'promotionlist' => $date_promo,
+                        'list_promo' => 1,
+                    ));
+                }else{
+                    $this->context->smarty->assign(array(
+                        'promotionlist' => array(),
                         'list_promo' => 1,
                     ));
                 }
